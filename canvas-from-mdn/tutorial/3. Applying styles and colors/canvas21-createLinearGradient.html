@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+    <canvas id="tutorial" width="150" height="150"></canvas>
+
+    <script>
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+            var ctx = canvas.getContext('2d');
+
+            // 그레이디언트를 생성한다
+            var lingrad = ctx.createLinearGradient(0, 0, 0, 150);
+            lingrad.addColorStop(0, '#00ABEB');
+            lingrad.addColorStop(0.5, '#fff');
+            lingrad.addColorStop(0.5, '#26C000');
+            lingrad.addColorStop(1, '#fff');
+
+            var lingrad2 = ctx.createLinearGradient(0, 50, 0, 95);
+            lingrad2.addColorStop(0.5, '#000');
+            lingrad2.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+            // 외곽선과 채움 스타일에 그레이디언트를 적용한다
+            ctx.fillStyle = lingrad;
+            ctx.strokeStyle = lingrad2;
+            
+            // 도형을 그린다
+            ctx.fillRect(10, 10, 130, 130);
+            ctx.strokeRect(50, 50, 50, 50);
+
+        }
+    }
+    window.onload=function(){
+        draw();
+    }
+    </script>
+</body>
+</html>

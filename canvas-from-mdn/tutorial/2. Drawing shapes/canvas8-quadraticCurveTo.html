@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tutorial_with_bg">
+    <canvas id="tutorial" width="150" height="150"></canvas>
+
+    <script>
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            
+            // Quadratric curves example
+            ctx.beginPath();
+            ctx.moveTo(75, 25);
+            ctx.quadraticCurveTo(25, 25, 25, 62.5);
+            ctx.quadraticCurveTo(25, 100, 50, 100);
+            ctx.quadraticCurveTo(50, 120, 30, 125);
+            ctx.quadraticCurveTo(60, 120, 65, 100);
+            ctx.quadraticCurveTo(125, 100, 125, 62.5);
+            ctx.quadraticCurveTo(125, 25, 75, 25);
+            ctx.stroke();
+        }
+    }
+    window.onload=function(){
+        draw();
+    }
+    </script>
+</body>
+</html>

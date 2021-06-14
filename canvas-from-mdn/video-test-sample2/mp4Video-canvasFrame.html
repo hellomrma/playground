@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div style="width:100%;height:600px;background:#000;border-bottom:5px solid goldenrod"></div>
+
+    <canvas id="canvas"></canvas>
+    <video id="video" src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"></video>
+    <img id="image" src="bg_video_black.png" alt="" />
+
+    <div style="width:100%;height:600px;background:#000;border-top:5px solid goldenrod"></div>
+
+
+    <div class="button_area">
+        <button id="play" type="button">PLAY</button>
+        <button id="pause" type="button">PAUSE</button>
+        <button id="stop" type="button">STOP</button>
+    </div>
+
+    <style>
+        body {
+            margin: 0px;
+            background: greenyellow;
+            position: relative;
+        }
+
+        canvas {
+            position: absolute;
+            top: 245px;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            transform: translate(-50%, 0);
+            background: url(bg_video.png);
+            background-size: 100% 100%;
+            background-position: center top
+        }
+
+        video {
+            display: none;
+        }
+
+        img {
+            display: none
+        }
+
+        .button_area {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%, 0);
+        }
+
+        .button_area button {
+            width: 100px;
+            height: 50px;
+            background: hotpink;
+            border:0;
+        }
+    </style>
+
+    <script>
+        var v = document.getElementById('video');
+        var i = document.getElementById('image');
+        var b_play = document.getElementById('play');
+        var b_pause = document.getElementById('pause');
+        var b_stop = document.getElementById('stop');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+
+        var w = 2560;
+        var h = 693;
+
+        canvas.width = w;
+        canvas.height = h;
+
+        b_play.addEventListener('click', function () {
+            v.play();
+            draw(v, context, w, h, i);
+        }, false);
+
+        b_stop.addEventListener('click', function () {
+            v.currentTime = 0
+            v.pause();
+        }, false);
+
+        b_pause.addEventListener('click', function () {
+            v.pause();
+        }, false);
+
+        function draw(v, c, w, h, i) {
+            if (v.paused || v.ended) return false;
+            c.drawImage(i, 0, 0, w, h);
+            c.globalCompositeOperation = 'source-in';
+            c.drawImage(v, 0, 0, w, h);
+            setTimeout(draw, 20, v, c, w, h, i);
+        }
+
+        window.onload = function () {}
+    </script>
+</body>
+
+</html>

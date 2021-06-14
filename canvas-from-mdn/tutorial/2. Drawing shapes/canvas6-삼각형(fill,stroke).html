@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="tutorial_with_bg">
+    <canvas id="tutorial" width="150" height="150"></canvas>
+
+    <script>
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+            var ctx = canvas.getContext('2d');
+            
+            // Filled triangle
+            ctx.beginPath();
+            ctx.moveTo(25, 25);
+            ctx.lineTo(105, 25);
+            ctx.lineTo(25, 105);
+            ctx.fill();
+
+            // Stroked triangle
+            ctx.beginPath();
+            ctx.moveTo(125, 125);
+            ctx.lineTo(125, 45);
+            ctx.lineTo(45, 125);
+            ctx.closePath();
+            ctx.stroke();
+        }
+    }
+    window.onload=function(){
+        draw();
+    }
+    </script>
+</body>
+</html>

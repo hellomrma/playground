@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="bg"></div>
+    <video id="video" src="https://cldup.com/w1KMTY1F3w.mp4" autoplay loop>
+    </video>
+    <img id="image" src="https://cldup.com/7F2INDQgRr.png" alt="" />
+
+    <style>
+        body {
+            margin: 0px;
+            background: #F2F3ED;
+        }
+
+        canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            right: 0;
+            bottom: 0;
+            background: url('https://cldup.com/junUfdmBQA.jpg');
+            background-size: 100% 100%;
+            z-index: -1;
+            margin: 0;
+            transform: translate3d(-50%, -50%, 0);
+        }
+
+        video {
+            display: none;
+        }
+
+        img {
+            display: none
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var v = document.getElementById('video');
+            var i = document.getElementById('image');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+
+            var w = 1044;
+            var h = 667;
+
+
+            canvas.width = w;
+            canvas.height = h;
+
+            v.addEventListener('play', function () {
+                draw(this, context, w, h, i);
+            }, false);
+
+        }, false);
+
+        function draw(v, c, w, h, i) {
+            if (v.paused || v.ended) return false;
+            c.drawImage(i, 0, 0, w, (h + 10));
+            c.globalCompositeOperation = 'source-in';
+            c.drawImage(v, 0, 0, w, h);
+            setTimeout(draw, 20, v, c, w, h, i);
+        }
+    </script>
+</body>
+
+</html>

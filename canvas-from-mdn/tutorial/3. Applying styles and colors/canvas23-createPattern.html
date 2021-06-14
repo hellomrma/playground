@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas MDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+    <canvas id="tutorial" width="150" height="150"></canvas>
+
+    <script>
+    function draw(){
+        var canvas = document.getElementById('tutorial');
+        if (canvas.getContext){
+            var ctx = canvas.getContext('2d');
+
+            // 패턴으로 사용할 이미지 오브젝트를 생성한다
+            var img = new Image();
+            img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+            img.onload = function() {
+
+                // 패턴을 생성한다
+                var ptrn = ctx.createPattern(img,'repeat');
+                ctx.fillStyle = ptrn;
+                ctx.fillRect(0,0,150,150);
+
+            }
+
+        }
+    }
+    window.onload=function(){
+        draw();
+    }
+    </script>
+</body>
+</html>

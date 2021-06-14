@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>마크업 산출물 : Project Name</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700');
+        html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0;font-family:'Noto Sans KR','맑은고딕','MalgunGothic',sans-serif}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*{box-sizing:inherit}*:before,*:after{box-sizing:inherit}img,embed,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
+        html,body{overflow:hidden}
+        header{position:fixed;top:0;left:0;right:0;height:80px;background:#333;z-index:2}
+        .clearfix:after,.clearfix:before{content:'';display:block;clear:both}
+        h1{float:left;margin:20px;font-size:26px;font-weight:bold;color:#eee}
+        h2{padding:7px;font-size:18px;font-weight:bold;color:#333;border-bottom:2px solid #333}
+        .search{float:right;margin:28px 25px;font-size:12px;color:#fff}
+        .search div{float:left;margin-left:40px}
+        .search div:first-child{margin-left:0}
+        .search label{vertical-align:middle;margin-right:10px;letter-spacing:1.5px;font-weight:300;color:greenyellow}
+        .search select,.search input{font-size:12px;vertical-align:middle;padding:3px 5px;color:#333}
+        .section_list{overflow:hidden;overflow-y:scroll;padding:20px;margin:80px 0 38px;}
+        ul{margin-bottom:20px}
+        li{display:block;padding:7px 10px;border-bottom:1px solid #eee}
+        li span{margin-left:10px}
+        a{font-size:13px;color:#777;text-decoration:none;letter-spacing:0.6px;padding:1px 5px;border-radius:3px}
+        a:hover{color:#333}
+        footer{position:fixed;left:0;right:0;bottom:0;padding:10px 20px;background:#333;text-align:center}
+        footer p{font-size:12px;color:#fff;letter-spacing:2px}
+        footer strong{text-transform:uppercase}
+        .new{display:inline-block;position:relative;top:-1px;height:16px;padding:0 5px 1px;border-radius:3px;background:#fd3939;font-family:verdana;font-size:11px;font-weight:normal;color:#fff;line-height:16px;vertical-align:middle}
+        .update{display:inline-block;position:relative;top:-1px;height:16px;background:#45a7fb;color:#fff;padding:0 5px 1px;border-radius:3px;font-family:verdana;font-size:11px;font-weight:normal;line-height:16px;vertical-align:middle}
+        .matching_keywords{background:rgb(42, 255, 156);color:rgb(22, 117, 46)}
+        @media screen and (max-width: 767px) {
+            h1{font-size:18px;margin:15px 15px 0px}
+            header{height:120px}
+            .search{float:none;margin:0 15px}
+            .search label{margin-right:5px}
+            .search div{margin-left:10px;margin-top:5px}
+            .section_list{margin:120px 0 28px}
+            .search select{width:68px}
+            .search_keyword{float:none!important;clear:both;margin-left:0!important;padding-top:5px}
+            .search input{width:129px}
+            footer{padding:5px 20px}
+        }
+    </style>
+</head>
+<body>
+    <header class="clearfix">
+        <h1>마크업 산출물 : Project Name</h1>
+        <section class="search clearfix">
+            <div class="search_menu">
+                <label for="search_from_menu">Menu</label>
+                <select name="" id="search_from_menu">
+                </select>
+            </div>
+            <div class="search_date">
+                <label for="search_from_date">Updated date</label>
+                <select name="" id="search_from_date">
+                </select>
+            </div>
+            <div class="search_keyword">
+                <label for="search_by_keyword">Searching by keywords</label><input type="text" id="search_by_keyword" placeholder="Keywords">
+            </div>
+        </section>
+    </header>
+    
+    <section class="section_list">
+        <h2>Common</h2>
+        <ul>
+            <li><a href="#none">공통 : common1.html</a> <span class="new">2019.04.12</span></li>
+            <li><a href="#none">공통 : common2.html</a></li>
+            <li><a href="#none">공통 : common3.html</a></li>
+        </ul>
+        <h2>Main</h2>
+        <ul>
+            <li><a href="#none">메인 : main1.html</a></li>
+            <li><a href="#none">메인 : main2.html</a> <span class="update">2019.04.15</span></li>
+            <li><a href="#none">메인 : main3.html</a></li>
+            <li><a href="#none">메인2 : main3.html</a></li>
+            <li><a href="#none">메인3 : main3.html</a></li>
+        </ul>
+        <h2>Sub</h2>
+        <ul>
+            <li><a href="#none">서브 : sub1-1.html</a></li>
+            <li><a href="#none">서브 : sub1-2.html</a> <span class="new">2019.04.30</span></li>
+            <li><a href="#none">서브 : sub1-3.html</a> <span class="update">2019.05.10</span></li>
+        </ul>
+        <h2>Sub2</h2>
+        <ul>
+            <li><a href="#none">서브2 : sub2-1.html</a></li>
+            <li><a href="#none">서브2 : sub2-2.html</a></li>
+            <li><a href="#none">서브2 : sub2-3.html</a> <span class="new">2019.04.30</span></li>
+            <li><a href="#none">서브2 : sub2-4.html</a> <span class="new">2019.06.05</span></li>
+            <li><a href="#none">서브2 : sub2-5.html</a> <span class="new">2019.04.30</span></li>
+        </ul>
+        <h2>Sub3</h2>
+        <ul>
+            <li><a href="#none">서브2 : sub3-1.html</a></li>
+            <li><a href="#none">서브2 : sub3-2.html</a></li>
+            <li><a href="#none">서브2 : sub3-3.html</a> <span class="update">2019.05.12</span></li>
+        </ul>
+    </section>
+    <footer>
+        <p><strong>Company NAME</strong> DIV Name / TEAM Name</p>
+    </footer>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
+    <script>
+    var headerHeight = $('header').outerHeight(),
+        footerHeight = $('footer').outerHeight(),
+        browserHeight = $(window).outerHeight(),
+        categoryList = ['All'],
+        categoryUnique = [],
+        categoryUnique2 = [],
+        sectionList = $('.section_list'),
+        categorySelect = $('#search_from_menu'),
+        dateLabel = sectionList.find('span'),
+        dateSelect = $('#search_from_date'),
+        dateList = ['Default'],
+        dateUnique = [],
+        searchKeyword = $('#search_by_keyword'),
+        searchValue = null;
+
+
+    var hiddenList = function() {
+        sectionList.find('h2').hide();
+        sectionList.find('ul').hide();
+        sectionList.find('li').hide();
+    }
+    var showList = function() {
+        sectionList.find('h2').show();
+        sectionList.find('ul').show();
+        sectionList.find('li').show();
+    }
+
+    var resetStyle = function() {
+        searchKeyword.val('');
+        sectionList.find('li a').removeClass('matching_keywords');
+    }
+
+    var setContentsHeight = function() {
+        headerHeight = $('header').outerHeight(),
+        footerHeight = $('footer').outerHeight(),
+        browserHeight = $(window).outerHeight();
+        sectionList.css({
+            height: browserHeight - (headerHeight + footerHeight)
+        });
+    }
+
+    var setCategory = function() {
+        if (sectionList.find('h2').length > 0) {
+            for (var i = 0; i < sectionList.find('h2').length+1; i++) {
+                categoryList.push(sectionList.find('h2').eq(i).text());
+                $.each(categoryList, function(i, el){
+                    if($.inArray(el, categoryUnique) === -1) categoryUnique.push(el);
+                });
+            }
+            categoryUnique = $.grep(categoryUnique,function(n){ return n == " " || n; });          
+            for (var j = 0; j < categoryUnique.length; j++) {
+                categorySelect.append( "<option value="+j+">" + categoryUnique[j] + "</option>" );
+            }
+
+            categorySelect.on('change', function(){
+                var selectedValue = $(this).val();
+                if (selectedValue == '0') {
+                    showList();
+                } else {
+                    dateSelect.val('Default').change();
+                    resetStyle();
+                    hiddenList();
+                    $.each($('.section_list h2'), function (i, el) { 
+                        if (i == selectedValue-1) {
+                            $(this).show();
+                            $(this).next('ul').show();
+                            $(this).next('ul').find('li').show();
+                        }
+                    });
+                }
+            });
+        } else {
+            $('..search_menu').hide();
+        }
+    }
+
+    var setDate = function() {
+        if (dateLabel.length > 0){
+            for (var k = 0; k < dateLabel.length; k++) {    
+                dateList.push(dateLabel.eq(k).text());
+                $.each(dateList, function(i, el){
+                    if($.inArray(el, dateUnique) === -1) dateUnique.push(el);
+                });
+            }
+
+            Array.prototype.move = function(from,to){
+                this.splice(to,0,this.splice(from,1)[0]);
+                return this;
+            };
+
+            dateUnique.sort();
+            dateUnique.move(dateUnique.lastIndexOf(),0);
+
+            for (var m = 0; m < dateUnique.length; m++) {
+                dateSelect.append( "<option value="+dateUnique[m]+">" + dateUnique[m] + "</option>" );  
+            }
+
+            dateSelect.on('change', function(){
+                var selectedValue = $(this).val();
+                if (selectedValue == 'Default') {
+                    showList();
+                } else {
+                    categorySelect.val('0').change();
+                    resetStyle();
+                    hiddenList();
+                    $.each($('.section_list span'), function (i, el) { 
+                        if ($(this).text() == selectedValue) {
+                            $(this).parents('ul').prev('h2').show();
+                            $(this).parents('ul').show();
+                            $(this).parents('li').show();
+                        }
+                    });
+                }
+            });
+        } else {
+            $('.search_date').hide();
+        }
+        
+    }
+
+    var searchFromKeyword = function() {
+        searchKeyword.on('keyup', function(e){
+            searchValue = $(this).val();
+            categorySelect.val('0').change();
+            dateSelect.val('Default').change();
+            if (searchValue.length > 0) {
+                hiddenList();
+                sectionList.find('li').each(function (index, element) {
+                    var matchingEl = $(this).find('a:contains('+ searchValue +')');
+                    matchingEl.parents('ul').prev('h2').show();
+                    matchingEl.parents('ul').show();
+                    matchingEl.parents('li').show();
+                    matchingEl.addClass('matching_keywords');
+                });
+            } else {
+                showList();
+                sectionList.find('a').removeClass('matching_keywords');
+            }
+        });
+    }
+
+    $(window).on('load', function(){
+        setContentsHeight();
+        setCategory();
+        setDate();
+        searchFromKeyword();
+    });
+    $(window).on('resize', function(){
+        setContentsHeight();
+    }).resize();
+    </script>
+</body>
+</html>
