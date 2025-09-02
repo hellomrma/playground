@@ -1,7 +1,37 @@
-// 공통 변수 및 믹스인 import
-@import './styles/variables';
+// SCSS 변수 정의
+$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$glass-border-hover: rgba(255, 255, 255, 0.3);
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+$transition-normal: all 0.3s ease;
+$box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.3);
 
-// 믹스인은 공통 파일에서 import
+// 믹스인 정의
+@mixin glass-effect {
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid $glass-border;
+  border-radius: 15px;
+}
+
+@mixin button-style {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid $glass-border-hover;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: $transition-normal;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+}
 
 .App {
   text-align: center;

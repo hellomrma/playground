@@ -1,5 +1,8 @@
-// 공통 변수 및 믹스인 import
-@import './styles/variables';
+// 전역 SCSS 변수
+$font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+$font-family-code: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 
 // 전역 스타일
 * {
