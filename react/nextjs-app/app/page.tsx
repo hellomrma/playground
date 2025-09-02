@@ -142,19 +142,26 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* 주요 기능 섹션: 이 프로젝트의 특징들을 나열합니다 */}
-        <div className={styles.features}>
-          <h3>주요 기능:</h3>
-          <ul>
-            <li>✅ Next.js 14</li>
-            <li>✅ App Router</li>
-            <li>✅ React 18</li>
-            <li>✅ Hooks 사용</li>
-            <li>✅ CSS Modules</li>
-            <li>✅ 서버 사이드 렌더링</li>
-            <li>✅ TypeScript</li>
-          </ul>
-        </div>
+                       {/* 주요 기능 섹션: 이 프로젝트의 특징들을 나열합니다 */}
+               <div className={styles.features}>
+                 <h3>주요 기능:</h3>
+                 <ul>
+                   <li>✅ Next.js 14</li>
+                   <li>✅ App Router</li>
+                   <li>✅ React 18</li>
+                   <li>✅ Hooks 사용</li>
+                   <li>✅ CSS Modules</li>
+                   <li>✅ 서버 사이드 렌더링</li>
+                   <li>✅ TypeScript</li>
+                 </ul>
+                 
+                 {/* About 페이지 링크 추가 */}
+                 <div className={styles.aboutLink}>
+                   <a href="/about" className={styles.aboutButton}>
+                     회사 소개 보기 →
+                   </a>
+                 </div>
+               </div>
       </div>
     </main>
   )

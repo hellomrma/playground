@@ -1,0 +1,441 @@
+// SCSS 변수 정의
+$primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+$glass-bg: rgba(255, 255, 255, 0.1);
+$glass-border: rgba(255, 255, 255, 0.2);
+$glass-border-hover: rgba(255, 255, 255, 0.3);
+$text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+$transition-normal: all 0.3s ease;
+$box-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+// 믹스인 정의
+@mixin glass-effect {
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid $glass-border;
+  border-radius: 15px;
+}
+
+@mixin button-style {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid $glass-border-hover;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: $transition-normal;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-hover;
+  }
+}
+
+// About 페이지 전체 스타일
+.aboutPage {
+  min-height: 100vh;
+  background: $primary-gradient;
+  color: white;
+  position: relative;
+}
+
+// GSAP 애니메이션을 위한 초기 상태는 JavaScript에서 설정됩니다
+
+// 홈으로 돌아가는 링크
+.homeLink {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 10;
+  
+  @media (max-width: 768px) {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .homeButton {
+    @include button-style;
+    text-decoration: none;
+    display: inline-block;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+// Key Visual 섹션
+.keyVisual {
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+  padding: 80px 20px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+}
+
+.keyVisualContent {
+  flex: 1;
+  max-width: 600px;
+  margin-right: 60px;
+  
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.mainTitle {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: $text-shadow;
+  background: $secondary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #f093fb;
+  text-shadow: $text-shadow;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.keyVisualImage {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholderImage {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+    font-size: 5rem;
+  }
+}
+
+// 섹션 간격 조정
+.introSection {
+  padding: 60px 20px;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: $text-shadow;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+}
+
+// 회사 소개 섹션
+.introSection {
+  .introGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+  
+  .introCard {
+    @include glass-effect;
+    padding: 30px;
+    text-align: center;
+    transition: $transition-normal;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: $box-shadow-hover;
+    }
+    
+    .cardIcon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #f093fb;
+    }
+    
+    p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+  }
+  
+  .companyInfo {
+    @include glass-effect;
+    padding: 40px;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #f093fb;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        &:before {
+          content: "🚀";
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+// 연혁 섹션
+.historySection {
+  .timeline {
+    position: relative;
+    
+    &:before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-50%);
+      
+      @media (max-width: 768px) {
+        left: 20px;
+      }
+    }
+  }
+  
+  .timelineItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 40px;
+    }
+    
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+  
+  .timelineYear {
+    background: $secondary-gradient;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 100px;
+    text-align: center;
+    z-index: 1;
+    
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
+  
+  .timelineContent {
+    @include glass-effect;
+    padding: 25px;
+    margin: 0 30px;
+    flex: 1;
+    max-width: 400px;
+    
+    @media (max-width: 768px) {
+      margin: 0;
+      max-width: none;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #f093fb;
+    }
+    
+    p {
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+  }
+}
+
+// 위치 섹션
+.locationSection {
+  .locationGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  
+  .locationInfo {
+    @include glass-effect;
+    padding: 30px;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #f093fb;
+    }
+    
+    h4 {
+      font-size: 1.3rem;
+      margin: 25px 0 15px 0;
+      color: #f093fb;
+    }
+    
+    .addressInfo, .transportInfo {
+      p {
+        margin: 8px 0;
+        line-height: 1.6;
+        
+        strong {
+          color: #f093fb;
+        }
+      }
+    }
+  }
+  
+  .mapContainer {
+    @include glass-effect;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    
+    .mapPlaceholder {
+      text-align: center;
+      font-size: 2rem;
+      opacity: 0.7;
+      line-height: 1.4;
+    }
+  }
+  
+  .branchOffices {
+    @include glass-effect;
+    padding: 40px;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      color: #f093fb;
+      text-align: center;
+    }
+    
+    .branchGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .branchCard {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      
+      h4 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        color: #f093fb;
+      }
+      
+      p {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        line-height: 1.4;
+      }
+    }
+  }
+}

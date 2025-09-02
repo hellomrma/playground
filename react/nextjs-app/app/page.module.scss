@@ -159,6 +159,28 @@ $transition-normal: all 0.3s ease;
     font-size: 1.1rem;
     opacity: 0.9;
   }
+  
+  .aboutLink {
+    text-align: center;
+    margin-top: 30px;
+    
+    .aboutButton {
+      display: inline-block;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: $transition-normal;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }
 
 // 반응형 디자인
