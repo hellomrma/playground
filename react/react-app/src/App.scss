@@ -1,0 +1,91 @@
+// 공통 변수 및 믹스인 import
+@import './styles/variables';
+
+// 믹스인은 공통 파일에서 import
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background: $primary-gradient;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: white;
+  padding: 20px;
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-shadow: $text-shadow;
+  }
+  
+  p {
+    margin-bottom: 40px;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+.counter-section {
+  @include glass-effect;
+  padding: 30px;
+  margin-bottom: 40px;
+  
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+  
+  button {
+    @include button-style;
+    margin: 0 10px;
+  }
+}
+
+.features {
+  @include glass-effect;
+  padding: 30px;
+  
+  h3 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+}
+
+// 반응형 디자인
+@media (max-width: 768px) {
+  .App-header {
+    h1 {
+      font-size: 2rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+  
+  .counter-section {
+    button {
+      display: block;
+      margin: 10px auto;
+      width: 200px;
+    }
+  }
+}
